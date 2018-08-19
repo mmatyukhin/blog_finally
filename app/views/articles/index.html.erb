@@ -1,7 +1,7 @@
 <% @articles.each do |article| %>
 <div class="container">
 <h3 class="title">  <%= article.title %></h3>
-<div class="author"><%= article.author %></div>
+<%#<div class="author"><%= article.author %> </div>
 <div class="article">
 <%=article.text.truncate(40, separator: /\s/) %>
 </div>
@@ -10,4 +10,4 @@
       </div>
 </div>
   <% end %>
-new posts will be soonish
+for new post /articles/new (temporarily)
