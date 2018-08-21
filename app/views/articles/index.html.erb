@@ -2,7 +2,7 @@
   <div class="container">
     <h3 class="title">  <%= article.title %></h3>
     <div class="article">
-    <%=article.text.truncate(40, separator: /\s/) %>
+      <%=article.text.truncate(40, separator: /\s/) %>
     </div>
     <div class="controll-buttons">
         <%# link_to 'Show', article_path(article) %>
