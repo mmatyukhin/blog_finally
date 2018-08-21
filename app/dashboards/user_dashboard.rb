@@ -10,7 +10,7 @@ class UserDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     articles: Field::HasMany,
     id: Field::Number,
-    user: Field::String,
+    username: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     first_name: Field::String,
@@ -26,7 +26,7 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :articles,
     :id,
-    :user,
+    :username,
     :created_at,
   ].freeze
 
@@ -35,7 +35,7 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :articles,
     :id,
-    :user,
+    :username,
     :created_at,
     :updated_at,
     :first_name,
@@ -47,8 +47,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :articles,
-    :user,
+    :username,
     :first_name,
     :email,
     :last_name,
@@ -61,6 +60,6 @@ class UserDashboard < Administrate::BaseDashboard
   #   "User ##{user.id}"
   # end
   def display_resource(user)
-    user.user
+    user.username
   end
 end
