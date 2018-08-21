@@ -1,3 +1,66 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+.container{
+}
+.feed_item {
+  width: 800px;
+  border-bottom-color: rgb(228, 230, 232);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-bottom: 0.3em;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  box-sizing: border-box;
+  margin-left: 2em;
+}
+.title{
+  border-bottom-color: rgb(228, 230, 232);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.controll-buttons{
+  text-align: right;
+}
+body{
+  padding-top: 80px;
+}
+#logo{
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+&:hover{
+  color: #fff;
+  text-decoration: none;
+  }
+}
+#logo{
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+&:hover{
+  color: #fff;
+  text-decoration: none;
+  }
+}
+.navbar{
+  padding-left: 1em;
+}
+.navbar-text{
+ padding-left: 2em;
+}
