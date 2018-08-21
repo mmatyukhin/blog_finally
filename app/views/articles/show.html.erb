@@ -6,4 +6,8 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
+<p>
+  <strong>author:</strong>
+  <%= @article.user.username %>
+</p>
 <%= link_to 'Back', articles_path %>

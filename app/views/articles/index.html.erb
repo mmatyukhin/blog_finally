@@ -1,13 +1,14 @@
-<div class="container">
 <%= will_paginate %>
 <% @articles.each do |article| %>
-  <div class="feed_item">
-<h3 class="title">  <%= article.title %></h3>
-
-<%#<div class="author"><%= article.author %>
-<div class="article">
-<%=article.text.truncate(40, separator: /\s/) %>
-</div>
+  <div class="container">
+      <h3 class="title">  <%= article.title %></h3>
+      <%#<div class="author"><%= article.author %>
+      <div class="article">
+      <%=article.text.truncate(40, separator: /\s/) %>
+      </div>
+      <div class="controll-buttons">
+        <%= link_to 'Show', article_path(article) %>
+      </div>
     </div>
   <% end %>
 <%= will_paginate %>
