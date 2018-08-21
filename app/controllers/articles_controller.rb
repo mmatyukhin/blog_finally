@@ -1,24 +1,23 @@
 class ArticlesController < ApplicationController
   def index
    @articles = Article.all
- end
- def show
-  @article = Article.find(params[:id])
-end
+  end
+  def show
+    @article = Article.find(params[:id])
+  end
   def new
     @article = Article.new
   end
   def edit
-  @article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
-    def destroy
-  @article = Article.find(params[:id])
-  @article.destroy
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
     redirect_to articles_path, notice: "Post destroyed"
   end
   def create
     @article = Article.new(article_params)
-
     if @article.save
       redirect_to @article
     else
@@ -26,15 +25,14 @@ end
     end
   end
   def update
-  @article = Article.find(params[:id])
-
-  if @article.update(article_params)
-    redirect_to @article
-  else
-    render 'edit'
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
   end
-end
-    private
+  private
     def article_params
       params.require(:article).permit(:title, :author, :text, :image)
     end
