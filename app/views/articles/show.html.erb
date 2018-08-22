@@ -10,4 +10,8 @@
   <strong>author:</strong>
   <%= @article.user.username %>
 </p>
+<%= image_tag(@article.image.url, alt: 'Image') if @article.image?%><br>
+<% if @article.image? == false %>
+<%= image_tag('default.png')%><br>
+<% end %>
 <%= link_to 'Back', articles_path %>
