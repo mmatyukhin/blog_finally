@@ -1,9 +1,14 @@
 class ArticlesController < ApplicationController
 
-  RESULTS_PER_PAGE = 3
 
   def index
-      @articles = Article.paginate(page: params[:page], per_page: RESULTS_PER_PAGE)
+      @articles = Article.all
+  if params[:tag]
+    @articles = Article.tagged_with(params[:tag])
+    else
+    @articles = Article.all
+    end
+    @articles = @articles.order(created_at: :desc).page params[:page]
   end
 
   def show
