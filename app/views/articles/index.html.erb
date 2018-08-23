@@ -7,8 +7,7 @@
       <div class="article">
       <%=article.text.truncate(40, separator: /\s/) %>
       </div>
-      <%= image_tag(article.image.url, alt: 'Image') if article.image? %>
-      <%= image_tag('default.png', alt: 'Image') if article.image? == false %>
+      <%= image_tag(article.image.url, alt: 'Image')%>
       <div class="controll-buttons">
         <%= link_to 'Show', article_path(article) %>
       </div>
