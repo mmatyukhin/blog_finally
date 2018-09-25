@@ -4,13 +4,10 @@
 #
 # If you want to add pagination or other controller-level concerns,
 # you're free to overwrite the RESTful controller actions.
-module Admin
-  class ApplicationController < Administrate::ApplicationController
-    before_action :authenticate_admin
 
-    def authenticate_admin
-      # TODO Add authentication logic here.
-    end
+  class Admins::ApplicationController < Administrate::ApplicationController
+    before_action :authenticate_admin!
+
 
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
@@ -18,4 +15,3 @@ module Admin
     #   params[:per_page] || 20
     # end
   end
-end

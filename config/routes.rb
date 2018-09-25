@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  namespace :admin do
+  devise_for :admins
+  namespace :admins do
       resources :articles
       resources :users
 
@@ -8,4 +9,5 @@ Rails.application.routes.draw do
   get '/index', to: 'articles#index'
   resources :articles
   root 'articles#index'
+  mount_simpleadmin
 end
