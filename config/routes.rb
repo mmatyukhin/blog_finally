@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'registrations/devise'
+  devise_for :users, :controllers => { registrations: 'registrations' }
   devise_for :admins
   namespace :admins do
       resources :articles
