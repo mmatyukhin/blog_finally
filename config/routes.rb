@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       root to: "articles#index"
     end
   get '/index', to: 'articles#index'
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   root 'articles#index'
   mount_simpleadmin
 end

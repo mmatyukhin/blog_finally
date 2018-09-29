@@ -10,5 +10,19 @@
   <strong>author:</strong>
   <%= @article.user.username %>
 </p>
+<p>
+  <% if user_signed_in? %>
+  <h2>Add a comment:</h2>
+    <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+    <p>
+      <% form.label :body %><br>
+      <%= form.text_area :body %>
+    </p>
+    <p>
+    <%= form.submit %>
+    </p>
+    <% end %>
+  <% end %>
+</p>
 <%= image_tag(@article.image.url, alt: 'Image')%><br>
 <%= link_to 'Back', articles_path %>
