@@ -1,11 +1,14 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-logo" id="logo"><%= link_to 'My_blog', root_path%></div>
-    <% if admin_signed_in? %>
-      <%=link_to 'admins', admins_root_path %>
-      <%=link_to 'sign_out', destroy_admin_session_path, method: :delete %>
-    <% end %>
-    <% if user_signed_in? %>
-      <%= link_to 'sign_out', destroy_user_session_path, method: :delete %>
-    <% end %>
+    <div class="users-navbar">
+      <% if admin_signed_in? %>
+        <%=link_to 'admins', admins_root_path %>
+        <%=link_to 'sign_out', destroy_admin_session_path, method: :delete %>
+      <% elsif user_signed_in? %>
+        <%= link_to 'sign_out', destroy_user_session_path, method: :delete %>
+      <% elsif user_signed_in? == false %>
+        <%= link_to 'sign in', new_user_session_path, method: :get %>
+      <% end %>
+    </div>
   </div>
 </header>

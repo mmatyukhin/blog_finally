@@ -11,6 +11,19 @@
   <%= @article.user.username %>
 </p>
 <p>
+  <h2>Comments</h2>
+  <% @article.comments.each do |comment| %>
+    <% if comment.moderation == true %>
+    <p>
+      <strong>Commenter:</strong>
+      <%= comment.user.username %>
+    </p>
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.body %>
+    </p>
+    <% end %>
+  <% end %>
   <% if user_signed_in? %>
   <h2>Add a comment:</h2>
     <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>

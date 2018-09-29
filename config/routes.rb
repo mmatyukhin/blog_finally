@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :admins do
       resources :articles
       resources :users
+      resources :comments
 
       root to: "articles#index"
     end
