@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   get '/index', to: 'articles#index'
   resources :articles do
-    resources :comments
+    resources :comments, only: :create
   end
   root 'articles#index'
   mount_simpleadmin

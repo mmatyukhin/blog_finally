@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :require_unbanned
+  before_action :set_article, :prevents_create_for_banned_user
+
   def create
-    @article = Article.find(params[:article_id])
     @comment = current_user.comments.build(comment_params)
     @comment.article = @article
     @comment.save
@@ -9,12 +9,13 @@ class CommentsController < ApplicationController
   end
 
   private
-    def require_unbanned
-      if current_user.banned == true
-        flash[:error] = "You are banned from comments"
-        @article = Article.find(params[:article_id])
-        redirect_to article_path(@article)
+    def prevents_create_for_banned_user
+      if current_user.banned?
+        redirect_to article_path(@article), flash: {error: 'You are banned from comments'}
       end
+    end
+    def set_article
+      @article = Article.find(params[:article_id])
     end
     def comment_params
       params.require(:comment).permit(:commenter, :body)
