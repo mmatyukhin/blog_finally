@@ -16,6 +16,7 @@ class UserDashboard < Administrate::BaseDashboard
     first_name: Field::String,
     email: Field::String,
     last_name: Field::String,
+    banned: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -27,6 +28,7 @@ class UserDashboard < Administrate::BaseDashboard
     :articles,
     :id,
     :username,
+    :banned,
     :created_at,
   ].freeze
 
@@ -35,6 +37,7 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :articles,
     :id,
+    :banned,
     :username,
     :created_at,
     :updated_at,
@@ -48,6 +51,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :username,
+    :banned,
     :first_name,
     :email,
     :last_name,
