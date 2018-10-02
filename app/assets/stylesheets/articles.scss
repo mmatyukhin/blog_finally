@@ -19,6 +19,9 @@
   box-sizing: border-box;
   margin-left: 2em;
 }
+.show-padding{
+  padding-left: 1em;
+}
 .title{
   border-bottom-color: rgb(228, 230, 232);
   border-bottom-style: solid;
@@ -29,6 +32,13 @@
 }
 body{
   padding-top: 80px;
+}
+.users-navbar{
+  text-align: right;
+  margin-right: 1.5em;
+  padding-top: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 #logo{
   float: left;

@@ -1,3 +1,4 @@
+<div class="show-padding">
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -11,4 +12,26 @@
   <%= @article.user.username %>
 </p>
 <%= image_tag(@article.image.url, alt: 'Image')%><br>
+<p>
+  <h2>Comments</h2>
+  <% @article.comments.approved.each do |comment| %>
+      <%= comment.body %>
+      <%= comment.user.username %>
+  <% end %>
+  <p>
+     <% if user_signed_in? %>
+     <h2>Add a comment:</h2>
+       <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+       <p>
+         <% form.label :body %><br>
+         <%= form.text_area :body %>
+       </p>
+       <p>
+       <%= form.submit %>
+       </p>
+       <% end %>
+     <% end %>
+   </p>
+</p>
 <%= link_to 'Back', articles_path %>
+</div>
