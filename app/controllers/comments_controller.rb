@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     @comment.article = @article
     @comment.save
+
     redirect_to article_path(@article)
   end
 
