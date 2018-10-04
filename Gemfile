@@ -59,7 +59,7 @@ group :test do
 end
 
 group :test, :development do
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails'
   gem 'pry'
 end
 

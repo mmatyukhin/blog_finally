@@ -4,9 +4,7 @@ RSpec.describe CommentsController, type: :controller do
   # let (:comment) { 'This is test comment for rspec i dont know what to write here, so i will type something' }
   # let (:username) { subject.current_user }
 
-  # before { binding.pry }
-
-  # it { '' }
+  it { '' }
 
     # describe '#new' do
     # subject { get :new }
