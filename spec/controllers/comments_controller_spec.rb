@@ -26,8 +26,8 @@ RSpec.describe CommentsController, type: :controller do
          it do
            expect(subject).to redirect_to(article)
            expect(flash[:error]).to eq 'You are banned from comments'
-        end
-        
+         end
+
        end
      end
 end
