@@ -1,15 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe Admins::UsersController, type: :controller do
+RSpec.describe CommentsController, type: :controller do
+    let(:user)     { create :user }
+    let!(:article) { create :article, user: user }
 
-    let (:comment) { 'This is test comment for rspec i dont know what to write here, so i will type something' }
-    let (:test_user) {create :user }
+    before { sign_in user }
 
-     describe '#create_new_comment' do
-       subject {}
+     describe '#create' do
+       let(:params) do
+         {
+           article_id: article.id,
+           comment: {
+             body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum'
+           }
+         }
+       end
 
-       context 'when user is logged in' do
-         it { expect (subject).to eq 'this is shit' }
+       subject { post :create, params: params }
+
+       it { expect { subject }.to change { user.comments.count }.by(1)  }
      end
-   end
 end
