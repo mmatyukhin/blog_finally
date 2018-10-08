@@ -19,5 +19,15 @@ RSpec.describe CommentsController, type: :controller do
        subject { post :create, params: params }
 
        it { expect { subject }.to change { user.comments.count }.by(1)  }
+
+       context 'when user is banned' do
+         let(:user) { create :user, banned:true }
+
+         it do
+           expect(subject).to redirect_to(article)
+           expect(flash[:error]).to eq 'You are banned from comments'
+        end
+        
+       end
      end
 end
