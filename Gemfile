@@ -29,6 +29,7 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'pg'
 gem 'administrate'
 gem 'carrierwave'
+gem 'acts_as_votable', '~> 0.11.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

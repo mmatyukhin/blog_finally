@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get '/index', to: 'articles#index'
   resources :articles do
     resources :comments, only: :create
+    member do
+      put 'like', to: "articles#like"
+      put 'unlike', to: "articles#unlike"
+    end
   end
   root 'articles#index'
   mount_simpleadmin

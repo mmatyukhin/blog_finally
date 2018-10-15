@@ -3,11 +3,16 @@
   <div class="container">
       <h3 class="title">  <%= article.title %></h3>
       <div class="article">
-        <%=article.text.truncate(40, separator: /\s/) %>
+        <%= article.text.truncate(40, separator: /\s/) %>
       </div>
       <%= image_tag(article.image.url, alt: 'Image')%>
       <div class="controll-buttons">
         <%= link_to 'Show', article_path(article) %>
+        <%=  article.votes_for.size %>
+        <div class="votes">
+          <%= link_to 'dislike', unlike_article_path(article), method: :put, remote: true, class: 'unlike_article' %>
+          <%= link_to 'like', like_article_path(article), method: :put, remote: true, class: 'like_article' %>
+        </div>
       </div>
     </div>
     </div>
