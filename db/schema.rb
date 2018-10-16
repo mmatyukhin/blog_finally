@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_104806) do
+ActiveRecord::Schema.define(version: 2018_10_16_095849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,13 @@ ActiveRecord::Schema.define(version: 2018_10_15_104806) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "image"
-    t.string "category"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -79,6 +84,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_104806) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+  add_foreign_key "articles", "categories"
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
