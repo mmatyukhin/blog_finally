@@ -11,7 +11,7 @@ class ImageField < Administrate::Field::Base
       data.url
     else
       default_url
-  end
+    end
   end
 
   def to_s
