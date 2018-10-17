@@ -9,7 +9,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
-    category: Field::String,
+    category: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
     text: Field::Text,
