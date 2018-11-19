@@ -1,5 +1,5 @@
 <% @articles.each do |article| %>
-  <div class="feed_item">
+  <div class="feed_item" data-article-id= <%= article.id %>>
   <div class="container">
       <h3 class="title">  <%= article.title %></h3>
       <div class="article">
@@ -8,7 +8,7 @@
       <%= image_tag(article.image.url, alt: 'Image')%>
       <div class="controll-buttons">
         <%= link_to 'Show', article_path(article) %>
-        <%=  article.votes_for.size %>
+        <span class="total-likes"> <%=  article.votes_for.size %> </span>
         <div class="votes">
           <%= link_to 'dislike', unlike_article_path(article), method: :put, remote: true, class: 'unlike_article' %>
           <%= link_to 'like', like_article_path(article), method: :put, remote: true, class: 'like_article' %>
