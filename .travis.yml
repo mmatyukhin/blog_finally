@@ -1,5 +1,10 @@
 rvm:
   - 2.5.1
 language: ruby
-
+addons:
+  postgresql: 9.4
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - cp config/secrets.travis.yml config/secrets.yml
+  - psql -c 'create database blog_finaly_test;' -U postgres
 script: bundle exec rspec
