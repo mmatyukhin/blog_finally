@@ -1,10 +1,18 @@
 rvm:
   - 2.5.1
 language: ruby
-addons:
-  postgresql: 9.4
+
+services:
+  - postgres:latest
+
 before_script:
+  - apt-get update -qq && apt-get install -y -qq postgresql postgresql-contrib libpq-dev cmake && apt-get install nodejs
+  - ruby -v
+  - which ruby
+  - gem install bundler --no-ri --no-rdoc
   - cp config/database.travis.yml config/database.yml
-  - cp config/secrets.travis.yml config/secrets.yml
-  - psql -c 'create database blog_finaly_test;' -U postgres
-script: bundle exec rspec
+  - bundle exec rake db:create db:schema:load
+
+rspec:
+  script:
+    - bundle exec rspec
