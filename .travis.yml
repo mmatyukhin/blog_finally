@@ -6,12 +6,8 @@ services:
   - postgres:latest
 
 before_script:
-  - apt-get update -qq && apt-get install -y -qq postgresql postgresql-contrib libpq-dev cmake && apt-get install nodejs
-  - ruby -v
-  - which ruby
-  - gem install bundler --no-ri --no-rdoc
   - cp config/database.travis.yml config/database.yml
-  - bundle exec rake db:create db:schema:load
+  - psql -c 'create database travis_ci_test;' -U postgres
 
 rspec:
   script:
