@@ -1,37 +1,30 @@
-<div class="show-padding">
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
-<p>
-  <strong>author:</strong>
-  <%= @article.user.username %>
-</p>
-<%= image_tag(@article.image.url, alt: 'Image')%><br>
-<p>
-  <h2>Comments</h2>
+<div class="container center-block">
+<div class="comment_item center-block">
+  <div class="h2"><%= @article.title %></div>
+  <div class="text-center"><%= image_tag(@article.image.url, alt: 'Image')%></div>
+  <div class="article"><%= @article.text %></div>
+  <div class="author text-right">Written by: <%= @article.user.username %></div>
+  <div class="col-xs-12 h2">Comments</div>
+</div>
   <% @article.comments.approved.each do |comment| %>
-      <%= comment.body %>
-      <%= comment.user.username %>
+    <div class="comment_item center-block">
+      <div class="row">
+        <div class="col-xs-12"><%= comment.body %></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-right"><%= comment.user.username %></div>
+      </div>
+    </div>
   <% end %>
-  <p>
      <% if user_signed_in? %>
+     <div class="comment_add center-block">
      <h2>Add a comment:</h2>
        <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
-       <p>
-         <% form.label :body %><br>
-         <%= form.text_area :body %>
-       </p>
-       <p>
-       <%= form.submit %>
-       </p>
+        <div class="col-12"> <% form.label :body %></div>
+        <div class="col-12"> <%= form.text_area :body %></div>
+       <div class="col-12"><%= form.submit %></div>
        <% end %>
      <% end %>
-   </p>
-</p>
-<%= link_to 'Back', articles_path %>
+     <%= link_to 'Back', articles_path %>
+     </div>
 </div>
