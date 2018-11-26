@@ -1,11 +1,11 @@
 <div class="container center-block">
 <div class="comment_item center-block">
-  <div class="h2"><%= @article.title %></div>
+  <div class="h2 title"><%= @article.title %></div>
   <div class="text-center"><%= image_tag(@article.image.url, alt: 'Image')%></div>
   <div class="article"><%= @article.text %></div>
   <div class="author text-right">Written by: <%= @article.user.username %></div>
-  <div class="col-xs-12 h2">Comments</div>
 </div>
+  <div class="h2 text-center">Comments</div>
   <% @article.comments.approved.each do |comment| %>
     <div class="comment_item center-block">
       <div class="row">

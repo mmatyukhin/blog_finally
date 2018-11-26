@@ -4,11 +4,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 .container{
+  text-decoration: none;
 }
 .feed_item {
   width: 800px;
   background-color: #fff;
   margin-bottom: 10px;
+  text-decoration: none;
+  color: black;
 }
 .comment_item{
   width: 800px;
@@ -28,9 +31,7 @@
   padding-left: 1em;
 }
 .title{
-  border-bottom-color: rgb(228, 230, 232);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
+  padding-top: 10px;
 }
 body{
   padding-top: 80px;
