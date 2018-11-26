@@ -1,2 +1,2 @@
 var articleId = "<%= @article.id %>"
-$('.feed_item[data-article-id=' + articleId +']').find('.total-likes').text("<%= @article.votes_for.size %>")
+$('.container-fluid[data-article-id=' + articleId +']').find('.total-likes').text("<%= @article.votes_for.size %>")

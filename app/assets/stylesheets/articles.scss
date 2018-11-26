@@ -72,9 +72,18 @@ body{
   display: inline-block;
   text-align: right;
 }
+.votes{
+  display: inline-block;
+  padding-left: 20px;
+  text-align: right;
+}
 .dislike{
   display: inline-block;
-
+  text-align: right;
+}
+.total-likes{
+  font-size: 2em;
+  display: inline-block;
 }
 .navbar{
   padding-left: 1em;
