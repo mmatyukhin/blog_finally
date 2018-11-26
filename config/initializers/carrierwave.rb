@@ -10,10 +10,10 @@ CarrierWave.configure do |config|
       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
       aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       region: 'EU'
-      }
-  config.fog_directory = 'adomantherokubucket'
-  config.storage = :fog
-  config.storage = :file
-  config.enable_processing = Rails.env.development?
+    }
+    config.fog_directory = 'adomantherokubucket'
+    config.storage = :fog
+    config.storage = :file
+    config.enable_processing = Rails.env.development?
   end
 end
