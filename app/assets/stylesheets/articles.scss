@@ -7,17 +7,11 @@
 }
 .feed_item {
   width: 800px;
-  border-bottom-color: rgb(228, 230, 232);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  margin-bottom: 0.3em;
-  border-image-outset: 0px;
-  border-image-repeat: stretch;
-  border-image-slice: 100%;
-  border-image-source: none;
-  border-image-width: 1;
-  box-sizing: border-box;
-  margin-left: 2em;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.article{
+  font-size: 1.2em;
 }
 .show-padding{
   padding-left: 1em;
@@ -29,6 +23,7 @@
 }
 body{
   padding-top: 80px;
+  background-color: rgb(234 , 234, 234)	;
 }
 .users-navbar{
   text-align: right;
@@ -90,4 +85,42 @@ body{
 }
 .navbar-text{
  padding-left: 2em;
+}
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
 }

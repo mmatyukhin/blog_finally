@@ -1,19 +1,18 @@
 class ArticlesController < ApplicationController
-
   def index
-      @articles = Article.order(created_at: :desc).page (params[:page])
+    @articles = Article.order(created_at: :desc).page params[:page]
   end
 
   def show
-      @article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def like
     @article = Article.find(params[:id])
     @article.liked_by current_user
     respond_to do |format|
-        format.html { redirect_to :back }
-        format.js { render layout: false }
+      format.html { redirect_to :back }
+      format.js { render layout: false }
     end
   end
 

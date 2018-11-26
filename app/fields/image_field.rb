@@ -1,9 +1,8 @@
-require "administrate/field/base"
+require 'administrate/field/base'
 
 class ImageField < Administrate::Field::Base
-
   def default_url
-      'default.png'
+    'default.png'
   end
 
   def url

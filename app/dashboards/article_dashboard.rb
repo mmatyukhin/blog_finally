@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class ArticleDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -15,7 +15,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     text: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    image: ImageField,
+    image: ImageField
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -23,36 +23,36 @@ class ArticleDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :user,
-    :category,
-    :id,
-    :title,
-    :text,
+  COLLECTION_ATTRIBUTES = %i[
+    user
+    category
+    id
+    title
+    text
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :user,
-    :category,
-    :id,
-    :title,
-    :text,
-    :created_at,
-    :updated_at,
-    :image,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    user
+    category
+    id
+    title
+    text
+    created_at
+    updated_at
+    image
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :user,
-    :category,
-    :title,
-    :text,
-    :image,
+  FORM_ATTRIBUTES = %i[
+    user
+    category
+    title
+    text
+    image
   ].freeze
 
   # Overwrite this method to customize how articles are displayed

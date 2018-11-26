@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class CategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -10,7 +10,7 @@ class CategoryDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     articles: Field::HasMany,
     id: Field::Number,
-    category: Field::String,
+    category: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -18,25 +18,25 @@ class CategoryDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :articles,
-    :id,
-    :category,
+  COLLECTION_ATTRIBUTES = %i[
+    articles
+    id
+    category
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :articles,
-    :id,
-    :category,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    articles
+    id
+    category
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :category,
+    :category
   ].freeze
 
   # Overwrite this method to customize how categories are displayed

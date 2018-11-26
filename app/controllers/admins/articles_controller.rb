@@ -1,4 +1,4 @@
-  class Admins::ArticlesController < Admins::ApplicationController
+class Admins::ArticlesController < Admins::ApplicationController
     # To customize the behavior of this controller,
     # you can overwrite any of the RESTful actions. For example:
     #

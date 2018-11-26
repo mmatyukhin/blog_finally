@@ -1,4 +1,4 @@
-  class Admins::CategoriesController < Admins::ApplicationController
+class Admins::CategoriesController < Admins::ApplicationController
     # To customize the behavior of this controller,
     # you can overwrite any of the RESTful actions. For example:
     #

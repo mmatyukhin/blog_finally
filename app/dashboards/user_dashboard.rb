@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class UserDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -16,7 +16,7 @@ class UserDashboard < Administrate::BaseDashboard
     first_name: Field::String,
     email: Field::String,
     last_name: Field::String,
-    banned: Field::Boolean,
+    banned: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,37 +24,37 @@ class UserDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :articles,
-    :id,
-    :username,
-    :banned,
-    :created_at,
+  COLLECTION_ATTRIBUTES = %i[
+    articles
+    id
+    username
+    banned
+    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :articles,
-    :id,
-    :banned,
-    :username,
-    :created_at,
-    :updated_at,
-    :first_name,
-    :email,
-    :last_name,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    articles
+    id
+    banned
+    username
+    created_at
+    updated_at
+    first_name
+    email
+    last_name
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :username,
-    :banned,
-    :first_name,
-    :email,
-    :last_name,
+  FORM_ATTRIBUTES = %i[
+    username
+    banned
+    first_name
+    email
+    last_name
   ].freeze
 
   # Overwrite this method to customize how users are displayed

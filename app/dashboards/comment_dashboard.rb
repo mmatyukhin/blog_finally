@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class CommentDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -14,7 +14,7 @@ class CommentDashboard < Administrate::BaseDashboard
     body: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    moderation: Field::Boolean,
+    moderation: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,33 +22,33 @@ class CommentDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :article,
-    :user,
-    :id,
-    :body,
+  COLLECTION_ATTRIBUTES = %i[
+    article
+    user
+    id
+    body
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :article,
-    :user,
-    :id,
-    :body,
-    :created_at,
-    :updated_at,
-    :moderation,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    article
+    user
+    id
+    body
+    created_at
+    updated_at
+    moderation
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :article,
-    :user,
-    :body,
-    :moderation,
+  FORM_ATTRIBUTES = %i[
+    article
+    user
+    body
+    moderation
   ].freeze
 
   # Overwrite this method to customize how comments are displayed
