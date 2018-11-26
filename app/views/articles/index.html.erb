@@ -1,9 +1,9 @@
 <% @articles.each do |article| %>
   <div class="container-fluid" data-article-id= <%= article.id %>>
-  <div class="container feed_item";">
+  <div class="container feed_item">
     <%= link_to article_path(article) do %>
-      <h3 class="col-xs-12 h1"> <%= article.title %> </h3>
-      <div class="col-md-12 article">
+      <h3 class="col-xs-12 h1 nodec"> <%= article.title %> </h3>
+      <div class="col-md-12 article nodec">
         <%= article.text.truncate(40, separator: /\s/) %>
       </div>
       <div class="text-center">
@@ -12,12 +12,12 @@
       <% end %>
       <div class="col-xs-12 col-md-12 text-right">
         <div class="dislike"> <%= link_to '<i class="fas fa-chevron-circle-down fa-2x"></i>'.html_safe, unlike_article_path(article), method: :put, remote: true, class: 'unlike_article' %> </div>
-        <span class="total-likes"> <%= article.votes_for.size %> </span>
+        <div class="total-likes"> <%= article.votes_for.size %> </div>
         <div class="like"> <%= link_to '<i class="fas fa-chevron-circle-up fa-2x"></i>'.html_safe, like_article_path(article), method: :put, remote: true, class: 'like_article' %> </div>
       </div>
   </div>
   </div>
 <% end %>
-  <div class="text-center paginate">
-    <%= paginate @articles %>
-  </div>
+<div class="text-center paginate">
+  <%= paginate @articles %>
+</div>

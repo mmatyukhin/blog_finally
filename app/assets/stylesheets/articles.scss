@@ -1,10 +1,18 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// i will clean it, but later :)
 @import "bootstrap-sprockets";
 @import "bootstrap";
 .container{
   text-decoration: none;
+}
+.show-bfr-btn-pad{
+  margin-top: 0.8em;
+}
+.nodec{
+  text-decoration: none;
+  color: black;
 }
 .feed_item {
   width: 800px;
@@ -17,12 +25,13 @@
   width: 800px;
   background-color: #fff;
   margin-bottom: 10px;
-  padding-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .comment_add{
   width: 800px;
   margin-bottom: 10px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 .article{
   font-size: 1.2em;
