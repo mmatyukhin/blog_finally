@@ -27,9 +27,6 @@
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
-.controll-buttons{
-  text-align: right;
-}
 body{
   padding-top: 80px;
 }
@@ -67,6 +64,17 @@ body{
   color: #fff;
   text-decoration: none;
   }
+}
+.footer{
+  display: inline-block;
+}
+.like{
+  display: inline-block;
+  text-align: right;
+}
+.dislike{
+  display: inline-block;
+
 }
 .navbar{
   padding-left: 1em;
