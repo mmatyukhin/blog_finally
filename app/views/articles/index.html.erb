@@ -3,7 +3,7 @@
   <div class="container feed_item">
     <%= link_to article_path(article) do %>
       <h3 class="col-xs-12 h1 nodec"> <%= article.title %> </h3>
-      <div class="col-md-12 article nodec">
+      <div class="col-xs-12 article nodec">
         <%= article.text.truncate(40, separator: /\s/) %>
       </div>
       <div class="text-center">

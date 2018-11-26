@@ -15,21 +15,24 @@
   color: black;
 }
 .feed_item {
-  width: 800px;
+  width: auto;
+  max-width: 800px;
   background-color: #fff;
   margin-bottom: 10px;
   text-decoration: none;
   color: black;
 }
 .comment_item{
-  width: 800px;
+  width: auto;
+  max-width: 800px;
   background-color: #fff;
   margin-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
 }
 .comment_add{
-  width: 800px;
+  width: auto;
+  max-width: 800px;
   margin-bottom: 10px;
   padding-left: 10px;
 }
