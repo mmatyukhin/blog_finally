@@ -106,17 +106,36 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.3)
     erubi (1.7.1)
+    excon (0.62.0)
     execjs (2.7.0)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
     faker (1.9.1)
       i18n (>= 0.7)
     ffi (1.9.25)
+    fog-aws (3.3.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-core (2.1.2)
+      builder
+      excon (~> 0.58)
+      formatador (~> 0.2)
+      mime-types
+    fog-json (1.2.0)
+      fog-core
+      multi_json (~> 1.10)
+    fog-xml (0.1.3)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
+    formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
+    ipaddress (0.8.3)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -154,6 +173,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
     mimemagic (0.3.2)
+    mini_magick (4.9.2)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -292,11 +312,13 @@ DEPENDENCIES
   devise
   factory_bot
   faker
+  fog-aws
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails
   kaminari
   listen (>= 3.0.5, < 3.2)
+  mini_magick
   normalize-rails
   pg
   pry
