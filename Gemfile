@@ -40,6 +40,7 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
+gem 'fog'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
