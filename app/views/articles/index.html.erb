@@ -7,7 +7,7 @@
         <%= article.text.truncate(40, separator: /\s/) %>
       </div>
       <div class="text-center">
-        <%= image_tag(article.image.url, alt: 'Image')%>
+        <div class="img-responsive"><%= image_tag(article.image.url, alt: 'Image')%></div>
       </div>
       <% end %>
       <div class="col-xs-12 col-md-12 text-right">
