@@ -8,7 +8,7 @@
         <%= article.text.truncate(130, separator: /\s/) %>
       </div>
       <div class="text-center">
-        <div class="image img-responsive"><%= image_tag(article.image.url, alt: 'Image')%></div>
+        <div class="image img-responsive"><%= image_tag(article.image.url, alt: 'Image').if article.image_tag.exists?%></div>
       </div>
     <% end %>
     <div class="col-xs-12 col-md-12 text-right footer">
