@@ -73,6 +73,8 @@ end
 group :test, :development do
   gem 'pry'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 end
 
 group :production do
