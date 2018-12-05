@@ -5,7 +5,7 @@
   <div class="author text-right">Written by: <%= @article.user.username %></div>
 </div>
   <div class="h2 text-center">Comments</div>
-  <% @article.comments.approved.each do |comment| %>
+  <% @article.comments.each do |comment| %>
     <div class="comment_item center-block">
       <div class="row">
         <div class="col-xs-12"><%= comment.body %></div>

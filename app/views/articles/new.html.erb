@@ -1,0 +1,20 @@
+<%= form_with scope: :article, url: articles_path, local: true do |form| %>  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <div id="editor-container"><%= form.text_area :text %></div>
+    <script type="text/javascript">
+      var quill = new Quill('#editor-container', {
+        modules: {
+          toolbar:[
+                  [{ header: [1, 2, false] }],
+                  ['bold', 'italic', 'underline'],
+                  ['image', 'code-block']
+                  ]
+                },
+                placeholder: 'Compose an epic...',
+                theme: 'snow'
+              });
+    </script>
+    <%= form.submit %>
+<% end %>
+<%= link_to 'Back', articles_path %>
