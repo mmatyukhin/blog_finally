@@ -1,7 +1,7 @@
 <div class="comment_item center-block">
   <div class="h2 title"><%= @article.title %></div>
   <div class="text-center"><%= image_tag(@article.image.url, alt: 'Image')%></div>
-  <div class="article"><%= @article.text %></div>
+  <div class="article"><%= @article.text.html_safe %></div>
   <div class="author text-right">Written by: <%= @article.user.username %></div>
 </div>
   <div class="h2 text-center">Comments</div>
