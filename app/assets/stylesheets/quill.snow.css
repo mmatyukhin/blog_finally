@@ -4,6 +4,9 @@
  * Copyright (c) 2014, Jason Chen
  * Copyright (c) 2013, salesforce.com
  */
+ .quill_container {
+   height: 375px;
+ }
 .ql-container {
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
@@ -942,4 +945,7 @@
 }
 .ql-container.ql-snow {
   border: 1px solid #ccc;
+}
+.quill_container{
+  height: 375px;
 }

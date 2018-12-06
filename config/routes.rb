@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     root to: 'articles#index'
   end
   get '/index', to: 'articles#index'
+  get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
   resources :articles do
     resources :comments, only: :create
     member do

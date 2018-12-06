@@ -11,7 +11,6 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.build(article_params)
 
     if @article.save
-      binding.pry
       flash[:success] = "Article created!"
       redirect_to root_url
     else
@@ -19,9 +18,24 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
+
   def like
     @article = Article.find(params[:id])
     @article.liked_by current_user
+
     respond_to do |format|
       format.html { redirect_to :back }
       format.js { render layout: false }
@@ -31,6 +45,7 @@ class ArticlesController < ApplicationController
   def unlike
     @article = Article.find(params[:id])
     @article.unliked_by current_user
+
     respond_to do |format|
       format.html { redirect_to :back }
       format.js { render layout: false }

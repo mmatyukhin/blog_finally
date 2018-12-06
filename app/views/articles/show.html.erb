@@ -3,6 +3,11 @@
   <div class="text-center"><%= image_tag(@article.image.url, alt: 'Image')%></div>
   <div class="article"><%= @article.text.html_safe %></div>
   <div class="author text-right">Written by: <%= @article.user.username %></div>
+  <div class="edit">
+    <% if current_user == @article.user %>
+      <%= link_to 'Edit', edit_article_path(@article) %>
+    <% end %>
+  </div>
 </div>
   <div class="h2 text-center">Comments</div>
   <% @article.comments.each do |comment| %>
@@ -13,6 +18,7 @@
       <div class="row">
         <div class="col-xs-12 text-right"><%= comment.user.username %></div>
       </div>
+      <%# link_to 'reply', new_comment_path(comment.id) %>
     </div>
   <% end %>
      <% if user_signed_in? %>

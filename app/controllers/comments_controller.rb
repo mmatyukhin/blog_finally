@@ -9,6 +9,9 @@ class CommentsController < ApplicationController
     redirect_to article_path(@article)
   end
 
+  def new
+
+  end
   private
 
   def prevents_create_for_banned_user
