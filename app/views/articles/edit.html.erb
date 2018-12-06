@@ -1,6 +1,9 @@
 <%= form_for @article do |form| %>  <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
+    <div class="col-xs-12"> <%= form.select :category, Category.all.collect{ |c| [c.category] },{ :prompt => "Please select"},
+                                { :multiple => true , class: "input-lg"}%>
+                                </div>
     <%= form.hidden_field :text %>
     <div id = "editor-container">
       <%= form.object.text.html_safe %>

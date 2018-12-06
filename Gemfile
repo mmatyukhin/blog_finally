@@ -15,6 +15,8 @@ gem 'factory_bot'
 gem 'faker'
 gem 'normalize-rails'
 gem 'puma', '~> 3.11'
+gem 'sidekiq'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

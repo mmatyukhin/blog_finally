@@ -1,7 +1,10 @@
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
     <%= form.label :title %>
     <%= form.text_field :title %>
-    <%= form.hidden_field :text %>
+    <div class="col-xs-12"><%= form.hidden_field :text %></div>
+    <div class="col-xs-12"> <%= form.select :category, Category.all.collect { |c| [ c.category ] }, { :prompt => "Please select"},
+                                { :multiple => true , class: "input-lg"}%>
+                                </div>
     <div id = "editor-container">
       <%= form.object %>
       </div>
