@@ -1,9 +1,28 @@
 <%= form_for @article do |form| %>  <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
-    <div class="col-12 ">
-      <%= form.text_area :text, type: 'text', class: 'quill_container'%>
-    </div>
+    <%= form.hidden_field :text %>
+    <div id = "editor-container">
+      <%= form.object.text.html_safe %>
+      </div>
+      <script type="text/javascript">
+        var quill = new Quill('#editor-container', {
+          modules: {
+            toolbar: [
+              [{ header: [1, 2, false] }],
+              ['bold', 'italic', 'underline'],
+              ['image', 'code-block']
+            ]
+          },
+          placeholder: 'Compose an epic...',
+          theme: 'snow'  // or 'bubble'
+        });
+        form  = document.querySelector('form');
+        $('form').submit(function() {
+          var field = $("#article_text");
+          field.val(quill.root.innerHTML);
+        });
+    </script>
     <%= form.label :image %>
     <div class="col-12 ">
       <%= form.file_field :image %>
