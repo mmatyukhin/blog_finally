@@ -16,5 +16,4 @@
 //= require activestorage
 //= require turbolinks
 //= require quill.global
-//= require quill
 //= require_tree .

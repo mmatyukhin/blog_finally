@@ -2,7 +2,8 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
     <div class="col-xs-12"><%= form.hidden_field :text %></div>
-    <div class="col-xs-12"> <%= form.select :category_id, options_for_select(Category.all.collect { |c| [ c.category, c.id ] }),
+    <div class="col-xs-12"><%= form.label :category_id %>
+      <%= form.select :category_id, options_for_select(Category.all.collect { |c| [ c.category, c.id ] }),
                                 { :multiple => true , class: "input-lg"}%>
                                 </div>
     <div id = "editor-container">
