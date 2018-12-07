@@ -13,7 +13,7 @@ RSpec.describe ArticlesController, type: :controller do
     let(:params) { article.attributes.compact }
 
     subject { get :show, params: params }
-    
+
     it {is_expected.to render_template :show }
   end
 end
