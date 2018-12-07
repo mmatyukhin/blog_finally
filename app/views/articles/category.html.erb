@@ -1,3 +1,5 @@
 <% @categories.each do |category| %>
-<div class="container-fluid"><%= category.category %></div>
+  <%= link_to show_category_path(category.id) do %>
+  <div class="container-fluid"><%= category.category %></div>
+  <% end %>
 <% end %>

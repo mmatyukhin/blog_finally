@@ -7,7 +7,11 @@ class ArticlesController < ApplicationController
   def category
     @categories = Category.order(params[:id])
   end
-  
+
+  def show_category
+    @articles = Article.order(created_at: :desc).page params[:page]
+  end
+
   def show
     @article = Article.find(params[:id])
   end
@@ -31,7 +35,6 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.find(params[:id])
 
     if @article.update(article_params)
-      binding.pry
       redirect_to @article
     else
       render 'edit'
