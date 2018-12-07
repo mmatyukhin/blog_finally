@@ -6,5 +6,6 @@ class Article < ApplicationRecord
   has_many :comments
   validates :text, presence: true, length: { minimum: 123 }
   validates :title, presence: true
+  validates :category_id, presence: true
   validates :image, presence: true
 end

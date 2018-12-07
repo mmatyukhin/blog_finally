@@ -1,6 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-logo" id="logo"><%= link_to 'My_blog', root_path%></div>
     <div class="users-navbar">
+      <%= link_to 'Categories', category_path %>
       <% if admin_signed_in? %>
         <%= link_to 'admins', admins_root_path %>
         <%= link_to 'sign_out', destroy_admin_session_path, method: :delete %>

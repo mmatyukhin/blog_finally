@@ -1,7 +1,7 @@
 <%= form_for @article do |form| %>  <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
-    <div class="col-xs-12"> <%= form.select :category, Category.all.collect{ |c| [c.category] },{ :prompt => "Please select"},
+    <div class="col-xs-12"> <%= form.select :category_id, options_for_select(Category.all.collect { |c| [ c.category, c.id ] }),
                                 { :multiple => true , class: "input-lg"}%>
                                 </div>
     <%= form.hidden_field :text %>
@@ -18,7 +18,7 @@
             ]
           },
           placeholder: 'Compose an epic...',
-          theme: 'snow'  // or 'bubble'
+          theme: 'snow'
         });
         form  = document.querySelector('form');
         $('form').submit(function() {

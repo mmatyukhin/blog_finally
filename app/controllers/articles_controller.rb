@@ -4,6 +4,10 @@ class ArticlesController < ApplicationController
     @articles = Article.order(created_at: :desc).page params[:page]
   end
 
+  def category
+    @categories = Category.order(params[:id])
+  end
+  
   def show
     @article = Article.find(params[:id])
   end
@@ -27,6 +31,7 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.find(params[:id])
 
     if @article.update(article_params)
+      binding.pry
       redirect_to @article
     else
       render 'edit'
@@ -55,6 +60,6 @@ class ArticlesController < ApplicationController
   private
 
     def article_params
-      params.require(:article).permit(:title, :text, :image, :category)
+      params.require(:article).permit(:title, :text, :image, :category_id)
     end
 end
