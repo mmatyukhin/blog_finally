@@ -1,1 +1,0 @@
-# ENV['SIMPLE_ADMIN_SECRET_KEY'] = 'UzT{^wShVH.a'

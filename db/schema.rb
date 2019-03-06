@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_085727) do
+ActiveRecord::Schema.define(version: 2018_10_16_095849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,14 +43,6 @@ ActiveRecord::Schema.define(version: 2018_12_06_085727) do
     t.string "category"
   end
 
-  create_table "comment_hierarchies", force: :cascade do |t|
-    t.integer "ancestor_id", null: false
-    t.integer "descendant_id", null: false
-    t.integer "generations", null: false
-    t.index ["ancestor_id", "descendant_id", "generations"], name: "comment_anc_desc_udx", unique: true
-    t.index ["descendant_id"], name: "comment_desc_idx"
-  end
-
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.bigint "article_id"
@@ -58,7 +50,6 @@ ActiveRecord::Schema.define(version: 2018_12_06_085727) do
     t.datetime "updated_at", null: false
     t.boolean "moderation", default: false
     t.bigint "user_id"
-    t.integer "parent_id"
     t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end

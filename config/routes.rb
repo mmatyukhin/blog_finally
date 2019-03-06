@@ -22,5 +22,4 @@ Rails.application.routes.draw do
     end
   end
   root 'articles#index'
-  mount_simpleadmin
 end
