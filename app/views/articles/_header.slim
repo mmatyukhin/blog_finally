@@ -1,0 +1,22 @@
+nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
+  = link_to "My Blog", root_path, class: "navbar-brand"
+  button.navbar-toggler data-toggle="collapse" type="button" data-target="#collapsibleNavbar"
+    span.navbar-toggler-icon
+  .collapse.navbar-collapse#collapsibleNavbar
+    ul.navbar-nav
+      li.nav-item
+        = link_to 'categories', category_path, class: "nav-link"
+      - if admin_signed_in?
+        li.nav-item
+          = link_to 'admins', admins_root_path, class: "nav-link"
+        li.nav-item
+          = link_to 'sign_out', destroy_admin_session_path, method: :delete, class: "nav-link"
+      - else
+        - if user_signed_in?
+          li.nav-item
+            = link_to 'new_post', new_article_path, class: "nav-link"
+          li.nav-item
+            = link_to 'sign_out', destroy_user_session_path, method: :delete, class: "nav-link"
+        - else
+          li.nav-item
+            = link_to 'sign in', new_user_session_path, method: :get, class: "nav-link"

@@ -12,7 +12,7 @@ gem 'pg'
 gem 'sidekiq'
 
 # layout
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.3.1'
 gem 'normalize-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'coffee-rails', '~> 4.2'
@@ -24,6 +24,7 @@ gem 'font-awesome-rails'
 gem 'russian'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'sprockets-rails'
 
 # content editor for users
 gem 'quilljs-rails'

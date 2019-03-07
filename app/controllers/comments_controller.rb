@@ -10,8 +10,8 @@ class CommentsController < ApplicationController
   end
 
   def new
-
   end
+  
   private
 
   def prevents_create_for_banned_user
