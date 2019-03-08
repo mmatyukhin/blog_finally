@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.order(created_at: :desc).page params[:page]
+    @articles = Article.moderated.order(created_at: :desc).page params[:page]
   end
 
   def category

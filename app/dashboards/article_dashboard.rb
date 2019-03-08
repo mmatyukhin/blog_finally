@@ -13,6 +13,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     text: Field::Text,
+    moderation: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     image: ImageField
@@ -38,6 +39,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     category
     id
     title
+    moderation
     text
     created_at
     updated_at
@@ -51,6 +53,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     user
     category
     title
+    moderation
     text
     image
   ].freeze
