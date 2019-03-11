@@ -1,28 +1,26 @@
-<div class="comment_item center-block">
+<div class="container comment_item center-block feed_item">
   <div class="h2 title"><%= @article.title %></div>
-  <div class="text-center"><%= image_tag(@article.image.url, alt: 'Image')%></div>
+  <div class="text-center"><%= image_tag(@article.image.url, alt: 'Image', class:'img-fluid')%></div>
   <div class="article"><%= @article.text.html_safe %></div>
   <div class="author text-right">Written by: <%= @article.user.username %></div>
   <div class="edit">
     <% if current_user == @article.user %>
       <%= link_to 'Edit', edit_article_path(@article) %>
     <% end %>
+    <%= link_to '<i class="title fas fa-chevron-circle-left fa-2x"></i>'.html_safe, articles_path %>
   </div>
 </div>
   <div class="h2 text-center">Comments</div>
   <% @article.comments.each do |comment| %>
-    <div class="comment_item center-block">
+    <div class="container comment_item">
       <div class="row">
         <div class="col-xs-12"><%= comment.body %></div>
       </div>
-      <div class="row">
-        <div class="col-xs-12 text-right"><%= comment.user.username %></div>
-      </div>
-      <%# link_to 'reply', new_comment_path(comment.id) %>
+        <div class="blockquote text-right"><%= comment.user.username %></div>
     </div>
   <% end %>
      <% if user_signed_in? %>
-     <div class="comment_add center-block form-group">
+     <div class="container comment_add center-block form-group">
      <h2>Add a comment:</h2>
        <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
         <div class="col-12">
@@ -36,5 +34,4 @@
         </div>
        <% end %>
      <% end %>
-  <%= link_to '<i class="title fas fa-chevron-circle-left fa-2x"></i>'.html_safe, articles_path %>
 </div>

@@ -32,7 +32,7 @@ text-decoration: none !important;
 }
 .comment_item{
   width: auto;
-  max-width: 740px;
+  max-width: 740px !important;
   background-color: #fff;
   margin-bottom: 10px;
   padding-left: 10px;
@@ -42,7 +42,7 @@ text-decoration: none !important;
 }
 .comment_add{
   width: auto;
-  max-width: 740px;
+  max-width: 740px !important;
   margin-bottom: 10px;
   padding-left: 10px;
 }
@@ -65,11 +65,6 @@ text-decoration: none !important;
 }
 .title{
   margin-top: 4px;
-}
-.image{
-  min-height: 390px;
-  max-width: 100%;
-  height: auto;
 }
 body{
   background-color: rgb(234 , 234, 234)	;

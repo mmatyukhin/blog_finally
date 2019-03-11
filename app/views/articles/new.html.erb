@@ -21,6 +21,9 @@
           placeholder: 'Compose an epic...',
           theme: 'snow'
         });
+        var Image = Quill.import('formats/image');
+        Image.className = 'img-fluid';
+        Quill.register(Image, true);
         form  = document.querySelector('form');
         $('form').submit(function() {
           var field = $("#article_text");
