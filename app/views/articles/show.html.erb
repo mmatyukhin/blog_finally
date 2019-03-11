@@ -11,7 +11,7 @@
   </div>
 </div>
   <div class="h2 text-center">Comments</div>
-  <% @article.comments.each do |comment| %>
+  <% @article.comments.approved.each do |comment| %>
     <div class="container comment_item">
       <div class="row">
         <div class="col-xs-12"><%= comment.body %></div>
