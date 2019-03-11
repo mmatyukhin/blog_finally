@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
   get '/index', to: 'articles#index'
   get '/category', to: 'articles#category'
-  get '/show_category', to: 'articles#show_category'
+  get '/show_category/:id', to: 'articles#show_category'
   get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
   resources :articles do
     resources :comments, only: :create

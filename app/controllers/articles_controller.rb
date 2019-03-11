@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def show_category
-    @articles = Article.order(created_at: :desc).page params[:page]
+    @articles = Category.find(params[:id]).articles.page params[:page]
   end
 
   def show

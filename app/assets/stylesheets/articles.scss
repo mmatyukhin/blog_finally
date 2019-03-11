@@ -110,6 +110,7 @@ body{
   display: inline-block;
 }
 .pagination a, .pagination span.current, .pagination span.gap {
+    width: auto;
     float: left;
     padding: 0 14px;
     line-height: 38px;
@@ -118,7 +119,9 @@ body{
     border: 1px solid #DDD;
     border-left-width: 0;
 }
-
+.width_pagination{
+  max-width: 740px !important;
+}
 .pagination {
     border-left: 1px solid #ddd;
     .first{

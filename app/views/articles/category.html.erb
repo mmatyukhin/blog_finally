@@ -1,5 +1,5 @@
 <% @categories.each do |category| %>
-  <%= link_to show_category_path(category.id) do %>
+  <%= link_to "show_category/#{category.id}", controller:"articles", action:"show_category", id: category.id do %>
   <div class="container-fluid"><%= category.category %></div>
   <% end %>
 <% end %>

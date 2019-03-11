@@ -1,1 +1,6 @@
-<h1>not working yet, sry :(</h1>
+<% @articles.each do |article| %>
+<%= render "/articles/view_articles", article: article %>
+<% end %>
+<div class="container width_pagination">
+  <%= paginate @articles %>
+</div>
