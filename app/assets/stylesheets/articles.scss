@@ -2,15 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // i will clean it, but later :)
-@import "bootstrap";
 
 .category{
   border-radius: 10px;
   text-align: left;
-}
-.container{
-  text-decoration: none;
-  width: 960px;
 }
 .show-bfr-btn-pad{
   margin-top: 0.8em;
@@ -25,10 +20,9 @@
 a:hover{
 text-decoration: none !important;
 }
-.feed_item {
+.feed_item{
   width: auto;
-  max-width: 740px;
-  height: auto;
+  max-width: 740px !important;
   background-color: #fff;
   margin-bottom: 10px;
   text-decoration: none;
@@ -119,12 +113,6 @@ body{
 .total-likes{
   font-size: 2em;
   display: inline-block;
-}
-.navbar{
-  padding-left: 1em;
-}
-.navbar-text{
- padding-left: 2em;
 }
 .pagination a, .pagination span.current, .pagination span.gap {
     float: left;

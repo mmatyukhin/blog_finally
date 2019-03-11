@@ -12,7 +12,7 @@
         <%= article.text.truncate(70, separator: /\s/).html_safe if article.text.present? %>
       </div>
       <div class="text-center">
-        <div class="image img-responsive"><%= image_tag(article.image.url, alt: 'Image')%></div>
+        <%= image_tag(article.image.url, alt: 'Image', class:"image" )%>
       </div>
     <% end %>
     <div class="col-xs-12 col-md-12 text-right footer">
