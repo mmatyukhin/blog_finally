@@ -1101,7 +1101,7 @@ GEM
     public_suffix (3.0.3)
     puma (3.12.4)
     quilljs-rails (0.0.4)
-    rack (2.0.8)
+    rack (2.2.3)
     rack-protection (2.0.5)
       rack
     rack-test (1.1.0)
